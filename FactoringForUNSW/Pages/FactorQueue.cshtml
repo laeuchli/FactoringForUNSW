@@ -1,0 +1,13 @@
+﻿@page
+@model FactoringForUNSW.Pages.FactorQueueModel
+@{
+    ViewData["Title"] = "Factor a Large Integer";
+}
+
+<h1>Factor a Large Integer</h1>
+
+<form method="post">
+    <label for="Number">Enter a large integer:</label>
+    <input type="text" id="InputNumberString" name="InputNumberString" value="@Model.InputNumberString" required />
+    <button type="submit">Factor</button>
+</form>

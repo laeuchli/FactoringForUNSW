@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Factor a Large Integer";
+}
+
+<h1>Factor a Large Integer</h1>
+
+<form method="post">
+    <label for="Number">Enter a large integer:</label>
+    <input type="text" id="InputNumberString" name="InputNumberString" value="@Model.InputNumberString" required />
+    <button type="submit">Factor</button>
+</form>
+
+@if (Model.HasResult)
+{
+    <h2>Result:</h2>
+    @if (Model.Factors == null)
+    {
+        <p>No two non-trivial factors found (possibly prime or 1).</p>
+    }
+    else
+    {
+        <p>@Model.InputNumber = @Model.Factors.Value.Item1 × @Model.Factors.Value.Item2</p>
+    }
+}

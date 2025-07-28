@@ -1,0 +1,36 @@
+﻿@page
+@model FactoringForUNSW.Pages.ShowFactorsModel
+@{
+    ViewData["Title"] = "All Factored Numbers";
+}
+
+<h1>All Factored Numbers</h1>
+
+@if (Model.FactorResults?.Any() == true)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Input</th>
+                <th>Factor 1</th>
+                <th>Factor 2</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var result in Model.FactorResults)
+            {
+                <tr>
+                    <td>@result.id</td>
+                    <td>@result.Factor1</td>
+                    <td>@result.Factor2</td>
+                    <td>@result.Timestamp.ToString("u")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No factorization results found in the database.</p>
+}
